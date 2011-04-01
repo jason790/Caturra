@@ -8,7 +8,7 @@ from menus.menu_pool import menu_pool
 from .models import User
 
 class UsersMenu(CMSAttachMenu):
-    name = _("Users Menu") # give the menu a name, this is required.
+    name = _("Users And Subscribers Menu") # give the menu a name, this is required.
 
     def get_nodes(self, request):
         """
