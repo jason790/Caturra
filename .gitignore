@@ -1,0 +1,6 @@
+.DS_Store
+.env
+tmp
+*.log
+.sass-cache
+node_modules
