@@ -43,6 +43,32 @@
     						</nav>
     					</header>
 
+              <!-- Menu -->
+                <section id="menu">
+
+                  <!-- Search -->
+                    <section>
+                      <form class="search" method="get" action="#">
+                        <input type="text" name="query" placeholder="Search" />
+                      </form>
+                    </section>
+
+                  <!-- Links -->
+                    <section>
+                      <ul class="links">
+                        {% show_menu 0 100 100 100 %}
+                      </ul>
+                    </section>
+
+                  <!-- Actions -->
+                    <section>
+                      <ul class="actions vertical">
+                        <li><a href="#" class="button big fit">Log In</a></li>
+                      </ul>
+                    </section>
+
+                </section>
+
               <!-- Main -->
       					<div id="main">
 
@@ -274,6 +300,13 @@
       					</section>
 
       			</div>
+
+        <!-- Scripts -->
+    			<script src="{% static 'js/jquery.min.js' %}"></script>
+    			<script src="{% static 'js/skel.min.js' %}"></script>
+    			<script src="{% static 'js/util.js' %}"></script>
+          <!--[if lte IE 8]><script src="{% static 'js/ie/respond.min.js' %}"></script><![endif]-->
+    			<script src="{% static 'js/main.js' %}"></script>
 
         {% render_block "js" %}
     </body>
