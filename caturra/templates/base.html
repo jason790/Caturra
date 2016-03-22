@@ -1,41 +1,59 @@
-{% load cms_tags menu_tags sekizai_tags %}
+{% load cms_tags menu_tags sekizai_tags staticfiles %}
 <!doctype html>
 <html>
     <head>
         <title>{% block title %}This is my new project home page{% endblock title %}</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <style type="text/css">
-            .nav {
-                padding-left: 0;
-            }
-            .nav li {
-                display: inline;
-                list-style-type: none;
-                padding-right: 20px;
-            }
-            .container {
-                width: 940px;
-                margin: 0 auto
-            }
-            .content {
-                float: left;
-                width: 80%;
-            }
-            .sidebar {
-                float: left;
-                width: 20%;
-            }
-        </style>
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
         {% render_block "css" %}
     </head>
     <body>
         {% cms_toolbar %}
-        <div class="container">
-            <ul class="nav">
-                {% show_menu 0 100 100 100 %}
-            </ul>
-            {% block content %}{% endblock content %}
-        </div>
+
+        <!-- Header -->
+    			<header id="header">
+
+    				<!-- Logo -->
+    					<h1 id="logo">Big Picture</h1>
+
+    				<!-- Nav -->
+    					<nav id="nav">
+    						<ul>
+    							<li><a href="#intro">Intro</a></li>
+    							<li><a href="#one">What I Do</a></li>
+    							<li><a href="#two">Who I Am</a></li>
+    							<li><a href="#work">My Work</a></li>
+    							<li><a href="#contact">Contact</a></li>
+                  {% show_menu 0 100 100 100 %}
+    						</ul>
+    					</nav>
+
+    			</header>
+
+        <!-- Intro -->
+    			<section id="intro" class="main style1 dark fullscreen">
+    				<div class="content container 75%">
+    					<header>
+    						<h2>Hey.</h2>
+    					</header>
+    					<p>Welcome to <strong>Big Picture</strong> a responsive site template designed
+    					by <a href="http://html5up.net">HTML5 UP</a>, built on <strong><a href="http://getskel.com">Skel</a></strong>,
+    					and released for free under the <a href="http://html5up.net/license">Creative Commons Attribution 3.0 license</a>.</p>
+    					<footer>
+    						<a href="#one" class="button style2 down">More</a>
+    					</footer>
+    				</div>
+    			</section>
+
+        <!-- One -->
+          <section id="one" class="main style2 right dark fullscreen">
+            <div class="content box style2">
+              {% block content %}{% endblock content %}
+            <a href="#two" class="button style2 down anchored">Next</a>
+          </section>
+
+
         {% render_block "js" %}
     </body>
 </html>
