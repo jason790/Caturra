@@ -16,4 +16,4 @@ install: "source env/bin/activate"
 # script: nosetests
 
 virtualenv:
-    system_site_packages: true
+    system_site_packages: false
