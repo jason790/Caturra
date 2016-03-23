@@ -42,11 +42,34 @@ Use this option if you want to create a new project.
 ````
 sudo pip install djangocms-installer
 djangocms -s -p . caturra
-```
+````
 
 ## Run Migrations
 ````
 python manage.py migrate
+````
+
+--------------
+
+## Develop Apps
+In the videos we will create apps that will integrate with the website.
+
+To start a blog run:
+
+````
+python manage.py startapp blog
+````
+
+Add the blog app in the `installed apps` section.
+````
+# caturra/settings.py
+
+````
+
+Then define the urls, model and run a migration.
+````
+python manage.py makemigrations blog
+python manage.py syncdb
 ````
 
 [ConPanna](http://conpanna.net)
