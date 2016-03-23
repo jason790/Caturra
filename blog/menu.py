@@ -22,7 +22,7 @@ class PostsMenu(CMSAttachMenu):
             # argument.
             node = NavigationNode(
                 post.title,
-                reverse('posts:description', args=(blog.pk,)),
+                reverse('posts:description', args=(post.pk,)),
                 blog.id
             )
             nodes.append(node)

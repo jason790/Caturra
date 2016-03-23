@@ -9,5 +9,6 @@ class BlogApp(CMSApp):
     name = _("Blog App")        # give your app a name, this is required
     urls = ["blog.urls"]       # link your app to url configuration(s)
     app_name = "blog"          # this is the application namespace
+    menus = [PostsMenu,]
 
 apphook_pool.register(BlogApp)
