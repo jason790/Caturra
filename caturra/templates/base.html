@@ -75,11 +75,10 @@
                 </section>
               {% endblock %}
 
-              {% block main_content %}
               <!-- Main -->
       					<div id="main">
 
-                  {% block post %}
+                  {% block content %}
     						  <!-- Post -->
       							<article class="post">
 
@@ -96,12 +95,6 @@
         									</div>
                         </header>
 
-                      {% block content %}
-                      <p>
-                        <em>page_url request.current_page.id</em>
-                      </p>
-                      {% endblock %}
-
                       <footer>
       									<ul class="actions">
       										<li><a href="" class="button big">Continue Reading</a></li>
@@ -113,10 +106,9 @@
       									</ul>
       								</footer>
       							</article>
-                    {% endblock post %}
+                    {% endblock %}
 
                 </div>
-              {% endblock %}
 
               <!-- Sidebar -->
       					<section id="sidebar">
