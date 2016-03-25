@@ -34,7 +34,7 @@ source env/bin/activate
 
 Install dependencies
 ````
-sudo pip install -r requirements
+sudo pip install -r requirements.txt
 ````
 
 ## Create A New Project
@@ -44,9 +44,18 @@ sudo pip install djangocms-installer
 djangocms -s -p . caturra
 ````
 
-## Run Migrations
+## Start The App
+
+Run migrations
 ````
 python manage.py migrate
+python manage.py makemigrations
+python manage.py syncdb
+````
+
+Run the server
+````
+python manage.py runserver
 ````
 
 --------------
