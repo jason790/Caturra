@@ -22,7 +22,7 @@ def show(request, id):
     """
     Show a single post
     """
-    post = Post.objects.filter(id=id)[0]
+    post = Post.objects.get(pk=id)
     template = loader.get_template('blog/show.html')
     context = {
         'title': post.title,

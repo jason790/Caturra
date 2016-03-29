@@ -1,10 +1,14 @@
+import os
 from django.db import models
+
+from users.models import User
 
 # Paypal integration
 import paypalrestsdk
 
 class Payment(models.Model):
     name = models.CharField(max_length=255)
+    user = models.ForeignKey(User)
     description = models.CharField(max_length=255)
 
     last_digits = models.CharField(max_length=4)
@@ -15,11 +19,14 @@ class Payment(models.Model):
 
     created_at = models.DateTimeField('date published')
 
-    def __init__(self):
-        paypalrestsdk.configure({
-            'mode': 'sandbox',
-            'client_id': os.environ.get('PAYPAL_CLIENT_ID'),
-            'client_id': os.environ.get('PAYPAL_CLIENT_SECRET')
-        })
-        
-        pass
+    # def __init__(self):
+    #     paypalrestsdk.configure({
+    #         'mode': 'sandbox',
+    #         'client_id': os.environ.get('PAYPAL_CLIENT_ID'),
+    #         'client_secret': os.environ.get('PAYPAL_CLIENT_SECRET')
+    #     })
+    #
+    #     super
+
+    def __str__(self):
+        return self.name

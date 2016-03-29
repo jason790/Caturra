@@ -6,8 +6,8 @@ class User(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
 
-    picture = models.CharField(max_length=20)
-    description = models.CharField(max_length=20)
+    picture = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
 
     email = models.CharField(max_length=80)
     password = models.CharField(max_length=140)
@@ -19,3 +19,6 @@ class User(models.Model):
 
     created_at = models.DateTimeField('date created')
     updated_at = models.DateTimeField('date updated')
+
+    def __str__(self):
+        return '{} {}'.format(self.first_name, self.last_name)
