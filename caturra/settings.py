@@ -147,7 +147,8 @@ INSTALLED_APPS = (
     'djangocms_video',
     'reversion',
     'caturra',
-    'blog'
+    'blog',
+    'users',
 )
 
 LANGUAGES = (
