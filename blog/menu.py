@@ -14,6 +14,7 @@ class PostsMenu(CMSAttachMenu):
         """
         This method is used to build the menu tree.
         """
+
         nodes = []
         for post in Post.objects.all():
             # the menu tree consists of NavigationNode instances
@@ -22,7 +23,7 @@ class PostsMenu(CMSAttachMenu):
             # argument.
             node = NavigationNode(
                 post.title,
-                reverse('show', args=(post.slug)),
+                reverse('show', args={'id': post.id}),
                 blog.id
             )
             nodes.append(node)
