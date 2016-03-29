@@ -3,12 +3,6 @@ from django.db import models
 # Paypal integration
 import paypalrestsdk
 
-paypalrestsdk.configure({
-    'mode': 'sandbox',
-    'client_id': os.environ.get('PAYPAL_CLIENT_ID'),
-    'client_id': os.environ.get('PAYPAL_CLIENT_SECRET')
-})
-
 class Payment(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
@@ -22,4 +16,10 @@ class Payment(models.Model):
     created_at = models.DateTimeField('date published')
 
     def __init__(self):
+        paypalrestsdk.configure({
+            'mode': 'sandbox',
+            'client_id': os.environ.get('PAYPAL_CLIENT_ID'),
+            'client_id': os.environ.get('PAYPAL_CLIENT_SECRET')
+        })
+        
         pass

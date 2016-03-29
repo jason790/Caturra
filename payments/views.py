@@ -1,4 +1,5 @@
 from django.shortcuts import render
+<<<<<<< HEAD
 from django.http import HttpResponse
 from django.template import loader
 
@@ -30,3 +31,7 @@ def show(request, id):
     }
 
     return HttpResponse(template.render(context, request))
+=======
+
+# Create your views here.
+>>>>>>> 0339e0b2d7926a4ccd9a41d3774e65167d35ada5
