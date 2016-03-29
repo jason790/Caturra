@@ -5,27 +5,27 @@ from cms.menu_bases import CMSAttachMenu
 from menus.base import Menu, NavigationNode
 from menus.menu_pool import menu_pool
 
-from .models import Post
+from .models import Payment
 
-class PostsMenu(CMSAttachMenu):
-    name = _("Posts Menu") # give the menu a name, this is required.
+class PaymentsMenu(CMSAttachMenu):
+    name = _("Payments Menu") # give the menu a name, this is required.
 
     def get_nodes(self, request):
         """
         This method is used to build the menu tree.
         """
         nodes = []
-        for post in Post.objects.all():
+        for payment in Payment.objects.all():
             # the menu tree consists of NavigationNode instances
             # Each NavigationNode takes a label as its first argument, a URL as
             # its second argument and a (for this tree) unique id as its third
             # argument.
             node = NavigationNode(
-                post.title,
-                reverse('show', args=(post.slug)),
-                blog.id
+                post.name,
+                reverse('payment:description', args=(payment.pk,)),
+                payment.id
             )
             nodes.append(node)
         return nodes
 
-menu_pool.register_menu(PostsMenu)
+menu_pool.register_menu(PaymentsMenu)

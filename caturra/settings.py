@@ -148,6 +148,7 @@ INSTALLED_APPS = (
     'reversion',
     'caturra',
     'blog',
+    'payments',
     'users',
 )
 

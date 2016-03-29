@@ -16,3 +16,8 @@ class Post(models.Model):
     comments = models.IntegerField(default=0)
 
     created_at = models.DateTimeField('date published')
+
+    def get_absolute_url(self):
+        return reverse('post:title', kwargs={
+            'slug': self.slug
+        })
