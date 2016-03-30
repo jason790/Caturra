@@ -6,6 +6,7 @@ from menus.base import Menu, NavigationNode
 from menus.menu_pool import menu_pool
 
 from .models import Payment
+from .models import Subscription
 
 class PaymentsMenu(CMSAttachMenu):
     name = _("Payments Menu") # give the menu a name, this is required.
@@ -29,3 +30,26 @@ class PaymentsMenu(CMSAttachMenu):
         return nodes
 
 menu_pool.register_menu(PaymentsMenu)
+
+class SubscriptionsMenu(CMSAttachMenu):
+    name = _("Subscription Menu") # give the menu a name, this is required.
+
+    def get_nodes(self, request):
+        """
+        This method is used to build the menu tree.
+        """
+        nodes = []
+        for subscription in Subscription.objects.all():
+            # the menu tree consists of NavigationNode instances
+            # Each NavigationNode takes a label as its first argument, a URL as
+            # its second argument and a (for this tree) unique id as its third
+            # argument.
+            node = NavigationNode(
+                subscription.name,
+                reverse('subscription:description', args=(subscription.pk,)),
+                subscription.id
+            )
+            nodes.append(node)
+        return nodes
+
+menu_pool.register_menu(SubscriptionsMenu)
