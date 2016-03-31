@@ -146,6 +146,7 @@ INSTALLED_APPS = (
     'djangocms_teaser',
     'djangocms_video',
     'reversion',
+    'tinymce',
     'caturra',
     'blog',
     'payments',
