@@ -21,7 +21,7 @@ class PaymentsMenu(CMSAttachMenu):
             # its second argument and a (for this tree) unique id as its third
             # argument.
             node = NavigationNode(
-                post.name,
+                payment.name,
                 reverse('payment:description', args=(payment.pk,)),
                 payment.id
             )
