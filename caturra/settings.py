@@ -72,6 +72,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
 STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
+# For easy_thumbnails to support retina displays (recent MacBooks, iOS)
+THUMBNAIL_HIGH_RESOLUTION = True
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'caturra', 'static'),
 )
@@ -145,6 +148,8 @@ INSTALLED_APPS = (
     'djangocms_picture',
     'djangocms_teaser',
     'djangocms_video',
+    'easy_thumbnails',
+    'filer',
     'reversion',
     'caturra',
     'blog',
