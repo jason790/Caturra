@@ -15,7 +15,7 @@ class Post(models.Model):
     likes = models.IntegerField(default=0)
     comments = models.IntegerField(default=0)
 
-    created_at = models.DateTimeField('date published')
+    created_at = models.DateTimeField('date published', auto_now=True)
 
     def get_absolute_url(self):
         return reverse('post:title', kwargs={

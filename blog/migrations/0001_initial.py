@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Post',
             fields=[
-                ('id', models.AutoField(serialize=False, auto_created=True, primary_key=True, verbose_name='ID')),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
                 ('slug', models.CharField(max_length=255)),
                 ('author', models.CharField(max_length=50)),
                 ('title', models.CharField(max_length=255)),
@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
                 ('shares', models.IntegerField(default=0)),
                 ('likes', models.IntegerField(default=0)),
                 ('comments', models.IntegerField(default=0)),
-                ('created_at', models.DateTimeField(verbose_name='date published')),
+                ('created_at', models.DateTimeField(auto_now=True, verbose_name='date published')),
             ],
         ),
     ]
