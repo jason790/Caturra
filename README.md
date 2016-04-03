@@ -57,6 +57,10 @@ Run the server
 ````
 python manage.py runserver
 ````
+Or use the Procfile
+````
+foreman start
+````
 
 --------------
 
