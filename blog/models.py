@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 # Create your models here.
 class Post(models.Model):
@@ -9,7 +10,7 @@ class Post(models.Model):
     description = models.CharField(max_length=255)
     picture = models.CharField(max_length=255)
 
-    body = models.TextField()
+    body = HTMLField()
     views = models.IntegerField(default=0)
     shares = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
